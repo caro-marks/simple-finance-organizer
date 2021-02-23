@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="reset/reset.css"> -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Finanças Pessoais</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="logo">FinanceApp</h1>
+
+        <img src="./assets/logo.svg" alt=" Logo para prosperidade">
+    </header>
+
+    <main class="container">
+        <div id="controler">
+            <!-- <section id="previously">
+                <h2 class="sr-only">Saldo Anterior</h2>
+
+                <div class="card">
+                    <h3>Contas</h3>
+                    <p>R$ 2755,00</p>
+                </div>
+
+                <div class="card">
+                    <h3>Corretora</h3>
+                    <p>R$ 2800</p>
+                </div>
+                <div class="card total">
+                    <h3>
+                        <span>Saldo</span>
+                        <img style="max-width: 2rem;" src="./assets/savings.svg" alt="entrada">
+                    </h3>
+                    <p>- R$ 740,57</p>
+                </div>
+
+            </section> -->
+
+            <section id="balance">
+                <h2 class="sr-only">Balanço Mensal</h2>
+
+                <div class="card">
+                    <h3>
+                        <span>Entradas</span>
+                        <img style="max-width: 1.5rem;" src="./assets/income.svg" alt="entrada">
+                    </h3>
+                    <p id="incomeDisplay"> R$ 0,00 </p>
+                </div>
+                <div class="card">
+                    <h3>
+                        <span>Saídas</span>
+                        <img style="max-width: 1.5rem;" src="./assets/expense.svg" alt="entrada">
+                    </h3>
+                    <p id="expenseDisplay"> R$ 0,00 </p>
+                </div>
+                <div class="card total">
+                    <h3>
+                        <span>Total</span>
+                        <img style="max-width: 1.5rem;" src="./assets/total.svg" alt="entrada">
+                    </h3>
+                    <p id="totalDisplay"> R$ 0,00 </p>
+                </div>
+
+            </section>
+        </div>
+
+        <section id="transaction">
+            <h2 class="sr-only">Transações</h2>
+
+            <a href="#" onclick="Modal.open()" class="button new">
+                + Nova Transação
+            </a>
+
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+
+            <div class="form">
+                <h2>Nova Transação</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">
+                            Descrição
+                        </label>
+                        <input type="text" id="description" name="description" placeholder="Descrição" />
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">
+                            Valor
+                        </label>
+                        <input type="number" step="0.01" id="amount" name="amount" placeholder="Valor" />
+                        <small class="help">
+                            Use o sinal - (negativo) para despesas e , (vírgula) para os decimais.
+                        </small>
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="kind">
+                            Tipo
+                        </label>
+                        <select name="kind" id="kind" required>
+                            <option value="" disabled selected>Selecione o tipo de gasto</option>
+                            <option value="renda">Renda</option>
+                            <option value="salario">Salário</option>
+                            <option value="internet">Internet</option>
+                            <option value="transporte">Transporte</option>
+                            <option value="moradia">Moradia</option>
+                            <option value="estudos">Estudos</option>
+                            <option value="alimentacao">Alimentação</option>
+                            <option value="lazer">Lazer</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="date">
+                            Data
+                        </label>
+                        <input type="date" id="date" name="date" placeholder="01/01/0001" />
+                    </div>
+                    <div class="input-group actions">
+                        <a href="#" onclick="Modal.close()" class="button cancel">
+                            Cancelar
+                        </a>
+                        <button type="submit">Salvar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>FinanceApp</p>
+    </footer>
+
+    <script src="./scripts.js">
+
+    </script>
+</body>
+
+</html>
